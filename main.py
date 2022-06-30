@@ -2,7 +2,7 @@ import random
 import pygame
 # import sys
 from constantes import *
-from funcionsExtras import *
+
 
 
 
@@ -13,6 +13,22 @@ screen = pygame.display.set_mode(SIZE)
 screen.fill(SCREEN)
 pygame.display.set_caption("TRES EN RAYA")
 my_font = pygame.font.SysFont('Comic Sans MS', 60)
+
+
+# PRINT BOARD COOL
+
+def print_board(board):
+    s = ""
+    for i in range(3):
+        for j in range(3):
+            if j == 2:
+                s+= "" + str(board[i][j])
+            
+            else:
+                s+= "" + str(board[i][j]) + " | "
+        
+        s+= "\n- - - - - \n"
+    print(s)
 
 def draw(row,col,player):
   if player == 1:
